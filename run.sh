@@ -14,7 +14,7 @@ function applyMethodToAliasesFiles ()
     fi
 
     if [ "$1" != "/" ]; then
-        applyMethodToAliasesFiles "$(dirname "$1")"
+        applyMethodToAliasesFiles "$(dirname "$1")" "$2"
     fi
 }
 
