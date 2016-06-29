@@ -37,3 +37,7 @@ function createAlias ()
 {
     alias "$1"="$2"
 }
+
+UPDATE_PATH=`dirname ${BASH_SOURCE}`
+$(cd ${UPDATE_PATH}; git submodule update --init)
+source "${UPDATE_PATH}/lib/update/update.sh"
