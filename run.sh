@@ -30,7 +30,7 @@ function processAliasesFile ()
 
 function destroyAlias ()
 {
-    unalias "$1"
+    alias "$1" 2> /dev/null > /dev/null && unalias "$1"
 }
 
 function createAlias ()
