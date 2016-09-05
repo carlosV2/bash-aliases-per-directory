@@ -1,3 +1,0 @@
-[submodule "lib/update"]
-	path = lib/update
-	url = https://github.com/carlosV2/bash-auto-updater.git
