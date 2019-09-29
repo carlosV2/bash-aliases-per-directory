@@ -21,8 +21,8 @@ function applyMethodToAliasesFiles ()
 function processAliasesFile ()
 {
     while read -r line; do
-        aliasName=`echo "$line" | cut -d' ' -f1`
-        aliasContent=`echo "$line" | cut -d' ' -f2-`
+        aliasName=$(echo "$line" | cut -d' ' -f1)
+        aliasContent=$(echo "$line" | cut -d' ' -f2-)
 
         "$2" "$aliasName" "$aliasContent"
     done < "$1"
