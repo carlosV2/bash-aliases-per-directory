@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 function cd ()
 {
-    applyMethodToAliasesFiles `pwd` destroyAlias
-    command cd "$@"
-    applyMethodToAliasesFiles `pwd` createAlias
+    applyMethodToAliasesFiles "$(pwd)" destroyAlias
+    command cd "$@" || return
+    applyMethodToAliasesFiles "$(pwd)" createAlias
 }
 
 function applyMethodToAliasesFiles ()
@@ -20,9 +20,9 @@ function applyMethodToAliasesFiles ()
 
 function processAliasesFile ()
 {
-    while read line; do
-        aliasName=`echo "$line" | cut -d' ' -f1`
-        aliasContent=`echo "$line" | cut -d' ' -f2-`
+    while read -r line; do
+        aliasName=$(echo "$line" | cut -d' ' -f1)
+        aliasContent=$(echo "$line" | cut -d' ' -f2-)
 
         "$2" "$aliasName" "$aliasContent"
     done < "$1"
