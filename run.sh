@@ -37,3 +37,6 @@ function createAlias ()
 {
     alias "$1"="$2"
 }
+
+# This is run with ~/bashrc (i.e. at shell startup). Create any alias in the starting folder
+applyMethodToAliasesFiles "$(pwd)" createAlias
