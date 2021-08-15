@@ -32,7 +32,7 @@ git clone https://github.com/carlosV2/bash-aliases-per-directory.git .bash-alias
 # Bash Aliases Per Directory
 
 # Source the bash dev tools script
-source "~/.bash-aliases-per-directory/run.sh"
+source "$HOME/.bash-aliases-per-directory/run.sh"
 ```
 
 **Enjoy!**
